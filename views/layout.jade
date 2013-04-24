@@ -2,6 +2,26 @@ doctype 5
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
   body
+ -if(locals.user)
+ .navbar
+    .navbar-inner
+       a.brand(href='#') University Chat
+       ul.nav
+         li(class=(title === "Chatrooms" ? "active divider-vertical" : "divider-vertical"))
+           a.brand(href='/chatRooms') Chat Rooms
+         li.divider-vertical
+           a.brand(href="/logout", onclick="return confirm('are you sure you want to do this?')") Logout
+  .container 
     block content
+-else    
+  .navbar
+    .navbar-inner
+        a.brand(href='#') 
+        ul.nav
+          li.active
+            a.brand(href='#') Welcome to University Chat! Sign in or sign up!
+  .container
+    block content
+

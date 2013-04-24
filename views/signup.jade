@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= "University Chat"
+  h2= "Create an Account"
+  .row
+    .span4.offset2
+      form.form-horizontal(method="post",action="/signup")
+        .control-group
+          label.control-label(for='inputEmail') Email
+          .controls
+            input#inputEmail(type='text', placeholder='Email', name='Email')
+        .control-group
+          label.control-label(for='inputPassword') Password
+          .controls
+            input#inputPassword(type='password', placeholder='Password', name='Password')
+        .control-group
+          .controls
+
+            button.btn(type='submit') Sign Up

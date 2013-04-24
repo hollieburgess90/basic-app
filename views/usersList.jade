@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 Your Friends
+  
+  .row(style="padding-top:20px")
+  - each user in users
+    .row
+      .span4
+        = user.Email
+      .span4(style="margin-top:-10px")
+        .btn-toolbar
+           a(href="/users/"+user._id, class="btn") Edit
+           a(href="/users/"+user._id+"/delete", class="btn btn-danger", onclick="return confirm('are you sure you want to do this?')") Delete
+          

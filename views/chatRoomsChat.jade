@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1=chatRoom.name
+  
+  script(src='/socket.io/socket.io.js')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js')
+  script(src='/javascripts/chat.js')
+    
+  input(type="hidden",id="userId",value=user._id)    
+  #chatRow.row
+    .span3    
+      b USERS
+        #users
+    .span7
+      #conversation
+      input#data(style='width: 200px;')
+      input#datasend.btn(type='button', value='send')
+
+  #chatRowWaiting.row
+    .span7    
+      h1 Hold your horses we are loading up now
+    .span3
+      img(src="http://www.ulla.ca/wp-content/themes/ulla/library/images/spinner.gif")

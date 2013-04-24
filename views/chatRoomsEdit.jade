@@ -1,0 +1,32 @@
+extends layout
+
+block content
+ form(action="/chatRooms/"+chatRoom._id,method="POST")
+   h1 Your Chat Rooms
+     .row
+       .span4      
+         label Name
+         input(type="text",name="name",value=chatRoom.name)
+         label Description
+         input(type="text",name="description",value=chatRoom.description)  
+         label Invite new friend 
+         input.span4(type="text",name="description",placeholder="Enter email here") 
+       .span2     
+         a(href="/chatRooms/"+chatRoom._id,class="btn",style="margin-top:170px") Invite
+  
+     .row
+       .span4.offset3
+         h4 Check to Include
+   - each user in users
+     h5
+       .row
+         .span4
+            =user.Email
+         .span4
+            input(type='checkbox',name="user-"+user._id,checked=_.contains(chatRoom.members,user._id.toString())) 
+   .row
+     .span7
+       input.btn.btn-primary(type="submit", value="Save Changes")
+        
+        
+    

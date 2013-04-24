@@ -1,0 +1,7 @@
+{"ts":1363815899590,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1363815947263,"patch":[[{"diffs":[[1,"extends layout\n\nblock content\n  form(action=\"/users/\"+users._id,method=\"POST\")\n    label Name\n    input(type=\"text\",name=\"name\",value=users.name)\n    label Description\n    input(type=\"text\",name=\"description\",value=users.description)\n    input(type=\"submit\") Update\n  "]],"start1":0,"start2":0,"length1":0,"length2":268}]],"length":268,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1363817260009,"patch":[[{"diffs":[[0,"lue=user"],[-1,"s"],[0,".name)\n "]],"start1":130,"start2":130,"length1":17,"length2":16}]],"length":267,"saved":false}
+{"ts":1363817262511,"patch":[[{"diffs":[[0,"lue=user"],[-1,"s"],[0,".descrip"]],"start1":210,"start2":210,"length1":17,"length2":16}]],"length":266,"saved":false}
+{"ts":1363817265506,"patch":[[{"diffs":[[0,"s/\"+user"],[-1,"s"],[0,"._id,met"]],"start1":50,"start2":50,"length1":17,"length2":16}]],"length":265,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1366237671579,"patch":[[{"diffs":[[0,"=\"name\","],[1,"placeholder=\"Edit Name\","],[0,"value=us"]],"start1":119,"start2":119,"length1":16,"length2":40}]],"length":289,"saved":false}
+{"ts":1366237697647,"patch":[[{"diffs":[[0,"iption\","],[1,"placeholder=\"Enter a Description\","],[0,"value=us"]],"start1":223,"start2":223,"length1":16,"length2":50}]],"length":323,"saved":false}

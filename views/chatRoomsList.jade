@@ -1,0 +1,24 @@
+extends layout
+
+block content
+ h1 Your Chat Rooms
+  .row(style="margin-top:15px")
+    form(action="/chatRooms",method="POST")
+      .span4
+        input.span4(type="text", placeholder='Create New Chat', name="name")
+      .span2(style="margin-top:-5px")
+        button.btn(type='submit') Create
+         
+        
+ ul
+ h3
+   
+    - each chatRoom in chatRooms
+      .row
+        .span4
+          = chatRoom.name
+        .span4
+           .btn-toolbar
+             a(href="/chatRooms/"+chatRoom._id, class="btn btn-small") Edit
+             a(href="/chatRooms/"+chatRoom._id+"/delete",class="btn btn-danger btn-small", onclick="return confirm('are you sure you want to do this?')") Delete
+             a(href="/chatRooms/"+chatRoom._id+"/chat", class="btn btn-success btn-small") Chat 

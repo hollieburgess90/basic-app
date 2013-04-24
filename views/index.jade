@@ -1,5 +1,31 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1(style="padding-bottom:100px")= "University Chat"
+  - if(locals.user)
+    h2 Chatrooms
+    p list them here
+    a(href="/logout") Logout
+  - else
+     
+        form(action='/',method='post').form-horizontal
+          .row
+            .span4.offset2(style="padding-left: 150px")
+              = message
+              .control-group
+                label.control-label(for='inputEmail') Email
+                .controls
+                  input#inputEmail(type='text', placeholder='Email', name='Email', value=username)
+              .control-group
+                label.control-label(for='inputPassword') Password
+                .controls
+                  input#inputPassword(type='password', placeholder='Password', name='Password')
+          .row
+            .span6.offset2(style="padding-left: 450px")
+              button.btn.btn-large.btn-primary(type='submit') Sign In
+          .control-group
+            .span6.offset2(style="padding-left: 300px; padding-top: 50px")
+              label.control-label New User? &nbsp
+              a(class="btn", href="/signup") Signup
+
+

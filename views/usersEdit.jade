@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  form(action="/users/"+user._id,method="POST")
+    label Name
+    input(type="text",name="name",placeholder="Edit Name",value=user.name)
+    label Description
+    input(type="text",name="description",placeholder="Enter a Description",value=user.description)
+    input(type="submit") Update
+  
